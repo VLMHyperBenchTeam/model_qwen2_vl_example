@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "model-qwen2-vl-example"
+version = "0.1.0"
+description = ""
+authors = ["JuliaJu <yulia.ovva@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+model-interface = {path = "/home/juliaju_o7/ozon_bank/model_qwen2_vl_example/python_wheels/model_interface-0.1.0-py3-none-any.whl"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
