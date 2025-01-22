@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-model-interface = {path = "/home/juliaju_o7/ozon_bank/model_qwen2_vl_example/python_wheels/model_interface-0.1.0-py3-none-any.whl"}
+model-interface = {git = "https://github.com/VLMHyperBenchTeam/model_interface.git", rev = "0.1.0"}
 
 
 [build-system]
