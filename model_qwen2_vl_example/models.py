@@ -28,9 +28,7 @@ class Qwen2VLModel(ModelInterface):
             system_prompt (str): Системный промпт, используемый моделью.
             cache_dir (str): Директория для кэширования данных модели.
         """
-        self.model_name = model_name
-        self.system_prompt = system_prompt
-        self.cache_dir = cache_dir
+        super().__init__(model_name, system_prompt, cache_dir)
         self.framework = "Hugging Face"
 
     def predict_on_image(self, image: Any, question: str) -> str:
