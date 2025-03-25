@@ -15,7 +15,7 @@ def main() -> None:
 
     # Регистрация модели в фабрике
     ModelFactory.register_model(
-        model_family, "model_qwen2_vl_example.models:Qwen2VL_model"
+        model_family, "model_qwen2_vl_example.models:Qwen2VLModel"
     )
 
     # Параметры для инициализации первой модели
@@ -41,10 +41,11 @@ def main() -> None:
     )
 
     # Вывод информации о моделях
-    print(f"Модель 1: {model_1}")
+    print(f"Создана Модель 1: {model_1}")
     model_1.print()
 
-    print(f"Модель 2: {model_2}")
+    print()
+    print(f"Создана Модель 2: {model_2}")
     model_2.print()
 
 

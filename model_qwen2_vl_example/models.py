@@ -12,7 +12,26 @@ class Qwen2VLModel(ModelInterface):
         model_name (str): Название модели как у разработчика (например, "Qwen2-VL-2B").
         system_prompt (str): Системный промпт, используемый моделью.
         cache_dir (str): Директория для кэширования данных модели.
+        framework (str): Используемый фреймворк для инференса модели
+                (например, "Hugging Face", "vLLM", "SGLang").
+                Каждый унаследованный класс реализует объект модели
+                привязанный к одному фреймворку инференса.
+                Этот атрибут класса всегда задан разработчиком класса для модели.
+                Атрибут не должен изменяться в процессе работы модели.
     """
+
+    def __init__(self, model_name: str, system_prompt: str, cache_dir: str) -> None:
+        """Инициализирует экземпляр Фабрики моделей.
+
+        Args:
+            model_name (str): Название модели как у разработчика (например, "Qwen2-VL-2B").
+            system_prompt (str): Системный промпт, используемый моделью.
+            cache_dir (str): Директория для кэширования данных модели.
+        """
+        self.model_name = model_name
+        self.system_prompt = system_prompt
+        self.cache_dir = cache_dir
+        self.framework = "Hugging Face"
 
     def predict_on_image(self, image: Any, question: str) -> str:
         """Реализация метода для предсказания на основе одного изображения.
@@ -45,4 +64,7 @@ class Qwen2VLModel(ModelInterface):
 
         Этот метод используется для отладки или вывода информации о модели.
         """
-        print(self.model_name)
+        print(f"self.model_name: {self.model_name}")
+        print(f"self.system_prompt: {self.system_prompt}")
+        print(f"self.cache_dir: {self.cache_dir}")
+        print(f"self.framework: {self.framework}")
